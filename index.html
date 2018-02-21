@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='custom.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="full-container">
+        <h1>BLOG PROJECT</h1>
+        <div class="col-md-6">
+            <div class="display-container">
+                <ul class="listgroup">
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="post-container">
+                <h6>TITLE</h6>
+                <div class="input-tag-container">
+                    <input class="title-input-tag" style="width:100%;height:2.5vw;" type="text" value="">
+                </div>
+                <H6>DESCRIPTION</H6>
+                <div class="input-tag-container" style="width:65%;">
+                    <textarea class="description-input-tag" style="width:100%;height:10vw;" type="text" value="" /></textarea>
+                </div>
+                <div class="button-wrapper">
+                    <button class="post-button" style="width: 100%;">POST</button>
+                </div>
+            </div>
+        </div>
+        <div class="popover-domcontainer">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script id='blog-container' type="text/x-handlebars-template">
+        <div class="blog-wrapper" style="clear:both;" id={{id}}>
+            <div class="posted-title">{{title}}</div>
+            <div class="posted-description">{{description}}</div>
+            <span>...see more</span>
+            <div class="likes-wrapper">
+                <span style="color:black;">{{likesno}}</span> people liked this
+            </div>
+        </div>
+    </script>
+    <script id='popover-container' type="text/x-handlebars-template">
+        <section class="popover-wrapper" id={{id}}>
+            <div style="text-align: right;"><span class="popover-cancel-button">X</span></div>
+            <div class="popover-title">{{text}}</div>
+            <div class="popover-description">{{body}}</div>
+            <div class="popover-button-container">
+                <button class="like-button">LIKE</button>
+                <button class="update-button">UPDATE</button>
+                <button class="delete-button">DELETE</button>
+            </div>
+            <div class="likes-container"><span>{{likesno}}</span> people liked this</div>
+            <div class="commentnumber-display"><span>{{commentlength}}</span> comments</div>
+            <div class="comments-add-input">
+                <input type="" name="" placeholder="Add a comment" value=""/>
+                <div class="add-comment"><button>Add comment</button></div>
+            </div>
+            <div class="added-comments-wrapper">
+                <ul></ul>
+            </div>
+
+        </section>
+    </script>
+    <script id="edit-container" type="text/x-handlebars-template">
+        <section class="edit-wrapper" id={{id}}>
+            <div class="edit-title">
+                <input type='text' value="{{title}}"/>
+            </div>
+            <div class="edit-input-tagwrapper">
+                <textarea type="text" name="">{{text}}</textarea>
+            </div>
+            <div>
+                <button class="save-button">SAVE</button>
+            </div>
+        </section>
+    </script>
+    <script src="custom.js"></script>
+</body>
+
+</html>
